@@ -262,10 +262,10 @@ async function seedItems() {
     let count = 0;
     for (const item of newItems) {
       await addDoc(itemsCollection, item);
-      console.log(\`Added item: \${item.title}\`);
+      console.log(`Added item: ${item.title}`);
       count++;
     }
-    console.log(\`Successfully seeded \${count} items to Firestore.\`);
+    console.log(`Successfully seeded ${count} items to Firestore.`);
     process.exit(0);
   } catch (error) {
     console.error("Error seeding data:", error);
