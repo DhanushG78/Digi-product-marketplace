@@ -21,13 +21,14 @@ export const ItemList: React.FC<ItemListProps> = ({
   title, 
   showFilters = false 
 }) => {
-  const { items, loading, error, refetch } = useItems(initialFilters);
+  const { items, loading, fetchItems: refetch } = useItems();
+  const error: any = null;
   const { getTerminology } = useAppConfig();
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    refetch({ ...initialFilters, searchTerm });
+    refetch(); // In dummy app, we handle client side search manually or not at all here.
   };
 
   return (
@@ -46,11 +47,11 @@ export const ItemList: React.FC<ItemListProps> = ({
               placeholder={`Search ${getTerminology(2).toLowerCase()}...`}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="flex-1 rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100"
+              className="flex-1 rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-violet-500 focus:outline-none focus:ring-1 focus:ring-violet-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100"
             />
             <button 
               type="submit"
-              className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="rounded-md bg-violet-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
             >
               Search
             </button>

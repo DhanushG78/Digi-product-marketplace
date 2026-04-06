@@ -55,7 +55,7 @@ export const ItemCard = ({ item, onEdit, onDelete }: Props) => {
         if (field.type === 'number' && field.name === 'price') {
           if (ui?.showPrice === false) return null;
           return (
-            <p key={field.name} className="text-xl font-bold text-blue-600 dark:text-blue-400 mt-2">
+            <p key={field.name} className="text-xl font-bold text-violet-600 dark:text-violet-400 mt-2">
               ₹ {Number(value).toLocaleString()}
             </p>
           );
@@ -90,7 +90,7 @@ export const ItemCard = ({ item, onEdit, onDelete }: Props) => {
           {onEdit && (
             <button
               onClick={() => onEdit(item)}
-              className="flex-1 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-2 rounded-lg font-medium text-sm transition focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="flex-1 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-2 rounded-lg font-medium text-sm transition focus:outline-none focus:ring-2 focus:ring-violet-500"
             >
               Edit
             </button>

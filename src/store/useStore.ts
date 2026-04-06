@@ -1,16 +1,22 @@
 import { create } from "zustand";
 
 export type User = {
+  uid: string;
   email: string;
-  role: "admin" | "user";
+  role: "buyer" | "seller";
+  name: string;
 };
 
 type Store = {
   user: User | null;
+  loading: boolean;
   setUser: (user: User | null) => void;
+  setLoading: (loading: boolean) => void;
 };
 
 export const useStore = create<Store>((set) => ({
   user: null,
-  setUser: (user) => set({ user }),
+  loading: true,
+  setUser: (user) => set({ user, loading: false }),
+  setLoading: (loading) => set({ loading }),
 }));

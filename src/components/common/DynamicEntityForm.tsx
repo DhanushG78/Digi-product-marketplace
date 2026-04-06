@@ -87,7 +87,7 @@ export const DynamicEntityForm: React.FC<DynamicEntityFormProps> = ({
         <button
           type="submit"
           disabled={isSubmitting}
-          className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-600 py-3 px-6 text-base font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:bg-blue-400 disabled:cursor-not-allowed sm:w-auto"
+          className="inline-flex w-full justify-center rounded-md border border-transparent bg-violet-600 py-3 px-6 text-base font-medium text-white shadow-sm hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 disabled:bg-violet-400 disabled:cursor-not-allowed sm:w-auto"
         >
           {isSubmitting ? 'Saving...' : (submitLabel || `Save ${getTerminology(1)}`)}
         </button>

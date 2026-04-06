@@ -13,6 +13,11 @@ export const getItems = async () => {
   return res.data;
 };
 
+export const getItemById = async (id: string) => {
+  const res = await api.get(`/items/${id}`);
+  return res.data;
+};
+
 export const createItem = async (data: any) => {
   const res = await api.post('/items', data);
   return res.data;

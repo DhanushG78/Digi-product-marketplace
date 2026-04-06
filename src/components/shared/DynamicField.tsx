@@ -14,7 +14,7 @@ type Props = {
  * input type strictly based on the appConfig schema.
  */
 export const DynamicField = ({ field, value, onChange }: Props) => {
-  const baseClasses = "mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 dark:focus:ring-blue-500 transition-colors";
+  const baseClasses = "mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-violet-500 focus:outline-none focus:ring-1 focus:ring-violet-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 dark:focus:ring-violet-500 transition-colors";
 
   switch (field.type) {
     case "text":
@@ -56,7 +56,7 @@ export const DynamicField = ({ field, value, onChange }: Props) => {
           <input
             type="file"
             onChange={(e) => onChange(field.name, e.target.files?.[0])}
-            className="block w-full text-sm text-gray-500 file:mr-4 file:rounded-md file:border-0 file:bg-blue-50 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-blue-700 hover:file:bg-blue-100 dark:file:bg-gray-800 dark:file:text-gray-200 dark:hover:file:bg-gray-700"
+            className="block w-full text-sm text-gray-500 file:mr-4 file:rounded-md file:border-0 file:bg-violet-50 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-violet-700 hover:file:bg-violet-100 dark:file:bg-gray-800 dark:file:text-gray-200 dark:hover:file:bg-gray-700"
           />
         </div>
       );
@@ -82,7 +82,7 @@ export const DynamicField = ({ field, value, onChange }: Props) => {
             type="checkbox"
             checked={!!value}
             onChange={(e) => onChange(field.name, e.target.checked)}
-            className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700"
+            className="h-4 w-4 rounded border-gray-300 text-violet-600 focus:ring-violet-500 dark:border-gray-600 dark:bg-gray-700"
           />
           <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">Yes</span>
         </div>

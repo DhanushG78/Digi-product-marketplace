@@ -14,7 +14,7 @@ export const Navbar = () => {
         
         {/* Marketplace Brand */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600 text-white shadow-sm transition-transform group-hover:scale-105">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-violet-600 text-white shadow-sm transition-transform group-hover:scale-105">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
@@ -30,8 +30,8 @@ export const Navbar = () => {
             Home
           </Link>
 
-          {user?.role === "admin" && (
-            <Link href="/dashboard" className="text-sm font-semibold text-blue-600 transition hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">
+          {user?.role === "seller" && (
+            <Link href="/dashboard" className="text-sm font-semibold text-violet-600 transition hover:text-violet-700 dark:text-violet-400 dark:hover:text-violet-300">
               Dashboard
             </Link>
           )}
@@ -53,7 +53,7 @@ export const Navbar = () => {
             ) : (
               <Link
                 href="/login"
-                className="rounded-lg bg-blue-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                className="rounded-lg bg-violet-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
               >
                 Login
               </Link>

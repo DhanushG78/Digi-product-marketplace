@@ -1,16 +1,18 @@
 export interface BaseItem {
   id: string;
-  sellerId: string;
+  creatorId: string;
+  creatorName?: string;
   createdAt: string;
   title: string;
   price: number;
   description: string;
-  images: string[];
-  // Catch-all for any dynamic attributes defined in appConfig.entityFields
-  // e.g., mileage (Cars), bedrooms (Real Estate), brand (Products)
+  category?: "template" | "ebook" | "ui-kit" | "asset" | string;
+  fileType?: "pdf" | "figma" | "zip" | "png" | string;
+  previewImages: string[];
+  downloadUrl?: string;
+  tags?: string[];
   [key: string]: any; 
 }
-
 // Filters that could be passed to the service/hook
 export interface ItemFilters {
   searchTerm?: string;

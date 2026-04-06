@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getItems } from "@/services/itemService";
+import { itemService } from "../services/item.service";
 
 export const useItems = () => {
   const [items, setItems] = useState<any[]>([]);
@@ -8,8 +8,7 @@ export const useItems = () => {
   const fetchItems = async () => {
     setLoading(true);
     try {
-      // Hit the real Next.js API through Axios
-      const data = await getItems();
+      const data = await itemService.getItems();
       setItems(data);
     } catch (error) {
       console.error("Failed to fetch items:", error);

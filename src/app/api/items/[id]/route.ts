@@ -2,15 +2,40 @@ import { NextResponse } from 'next/server';
 import { itemsDb } from '@/lib/memoryDb';
 
 /**
+ * GET /api/items/:id
+ * Fetches a single item by its ID.
+ */
+export async function GET(
+  request: Request,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  try {
+    const { id } = await params;
+    const item = itemsDb.find((item) => item.id === id);
+
+    if (!item) {
+      return NextResponse.json({ error: 'Item not found' }, { status: 404 });
+    }
+
+    return NextResponse.json(item);
+  } catch (error) {
+    return NextResponse.json(
+      { error: 'Failed to fetch item.' },
+      { status: 500 }
+    );
+  }
+}
+
+/**
  * PUT /api/items/:id
  * Updates an item completely or partially.
  */
 export async function PUT(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const id = params.id;
+    const { id } = await params;
     const body = await request.json();
     
     // Find the item
@@ -39,10 +64,10 @@ export async function PUT(
  */
 export async function DELETE(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const id = params.id;
+    const { id } = await params;
     const index = itemsDb.findIndex((item) => item.id === id);
 
     if (index === -1) {

@@ -5,10 +5,10 @@ import { appConfig } from "@/config/appConfig";
 
 export default function Dashboard() {
   // 1. Kick out anyone who isn't authenticated as an admin
-  const { user } = useAuth("admin");
+  const { user } = useAuth("seller");
 
   // Since useAuth redirects asynchronously, handle the blip where `user` is strictly null
-  if (!user || user.role !== "admin") return null;
+  if (!user || user.role !== "seller") return null;
 
   return (
     <div className="p-8 max-w-7xl mx-auto min-h-screen bg-white dark:bg-gray-950">
@@ -17,7 +17,7 @@ export default function Dashboard() {
           Admin Dashboard
         </h1>
         <p className="mt-2 text-lg text-gray-500 dark:text-gray-400">
-          Manage {appConfig.entity.route} securely. <span className="text-blue-600 font-semibold">Only admins can see this.</span>
+          Manage {appConfig.entity.route} securely. <span className="text-violet-600 font-semibold">Only admins can see this.</span>
         </p>
       </header>
 
