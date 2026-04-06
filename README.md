@@ -94,7 +94,8 @@ src/
 ├── store/             # Zustand state management
 ├── lib/               # Firebase & utility configurations
 └── hooks/             # Custom React hooks
-```
+
+For a deep dive into the modular architecture used in this project, check out the [Project Structure Guide](docs/project-structure.md).
 
 ---
 
